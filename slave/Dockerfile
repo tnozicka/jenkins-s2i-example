@@ -5,7 +5,7 @@ MAINTAINER Siamak Sadeghianfar <ssadeghi@redhat.com>
 
 # Install headless Java
 USER root
-RUN yum clean all && \
+RUN yum clean all || true && \
 #    echo "checkpoint" && (yum-config-manager --disable 'rhel*' 1>/dev/null || true) && echo "checkpoint" && \
     yum-config-manager --enable rhel-7-server-rpms && \
     yum-config-manager --enable rhel-7-server-ose-3.2-rpms && \
